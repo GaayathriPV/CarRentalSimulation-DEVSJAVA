@@ -28,16 +28,22 @@ public class CarRentalSystem extends ViewableDigraph{
 		ViewableAtomic cust_genr = new customerGenerator("customerGenerator",5);
 		ViewableAtomic paper_work = new PaperWork("PaperWork");
 		ViewableAtomic economy_car = new Economy("Economy");
+		ViewableAtomic midsize_car = new Midsize("Midsize");
+		ViewableAtomic minivan_car = new MiniVan("MiniVan");
 		
 		add(cust_genr);
 		add(paper_work);
 		add(economy_car);
+		add(midsize_car);
+		add(minivan_car);
 		
 		addCoupling(cust_genr,"cust_gen",paper_work,"Cust_In");
 		addCoupling(paper_work, "CheckedIn_0", economy_car, "economyIn");
 		addCoupling(economy_car, "economyOut", this, "out0");
-		addCoupling(paper_work, "CheckedIn_1", this, "out1");
-		addCoupling(paper_work, "CheckedIn_2", this, "out2");
+		addCoupling(paper_work, "CheckedIn_1", midsize_car, "midsizeIn");
+		addCoupling(midsize_car, "midsizeOut", this, "out1");
+		addCoupling(paper_work, "CheckedIn_2", minivan_car, "minivanIn");
+		addCoupling(minivan_car, "minivanOut", this, "out2");
 	}
 
     /**
@@ -46,12 +52,16 @@ public class CarRentalSystem extends ViewableDigraph{
      */
     public void layoutForSimView()
     {
-        preferredSize = new Dimension(734, 402);
+        preferredSize = new Dimension(758, 439);
         if((ViewableComponent)withName("PaperWork")!=null)
-             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(211, 133));
+             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(175, 139));
         if((ViewableComponent)withName("customerGenerator")!=null)
-             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(19, 127));
+             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(1, 132));
         if((ViewableComponent)withName("Economy")!=null)
              ((ViewableComponent)withName("Economy")).setPreferredLocation(new Point(358, 28));
+        if((ViewableComponent)withName("MiniVan")!=null)
+             ((ViewableComponent)withName("MiniVan")).setPreferredLocation(new Point(364, 326));
+        if((ViewableComponent)withName("Midsize")!=null)
+             ((ViewableComponent)withName("Midsize")).setPreferredLocation(new Point(363, 188));
     }
 }
