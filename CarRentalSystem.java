@@ -21,7 +21,9 @@ public class CarRentalSystem extends ViewableDigraph{
 	}
 	
 	public void CarRentalSystemConstruct() {
-		this.addOutport("out");
+		this.addOutport("out0");
+		this.addOutport("out1");
+		this.addOutport("out2");
 		
 		ViewableAtomic cust_genr = new customerGenerator("customerGenerator",5);
 		ViewableAtomic paper_work = new PaperWork("PaperWork");
@@ -30,7 +32,9 @@ public class CarRentalSystem extends ViewableDigraph{
 		add(paper_work);
 		
 		addCoupling(cust_genr,"cust_gen",paper_work,"Cust_In");
-		addCoupling(paper_work, "CheckedIn_0", this, "out");
+		addCoupling(paper_work, "CheckedIn_0", this, "out0");
+		addCoupling(paper_work, "CheckedIn_1", this, "out1");
+		addCoupling(paper_work, "CheckedIn_2", this, "out2");
 	}
 
     /**
