@@ -30,9 +30,7 @@ public int getPriority() {
 }
 
 public String toString(){
-	return name+"_"+"type"+type_of_car;
-	  //return name+"_Demo_"+(double)((int)(processingTime*100))/100;
-	  //return name+"_"+((double)((int)(processingTime*100)))/100;
+	return name+"_"+"type"+type_of_car; 
   }
 		
 }

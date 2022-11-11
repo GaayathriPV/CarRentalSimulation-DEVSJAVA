@@ -27,12 +27,15 @@ public class CarRentalSystem extends ViewableDigraph{
 		
 		ViewableAtomic cust_genr = new customerGenerator("customerGenerator",5);
 		ViewableAtomic paper_work = new PaperWork("PaperWork");
+		ViewableAtomic economy_car = new Economy("Economy");
 		
 		add(cust_genr);
 		add(paper_work);
+		add(economy_car);
 		
 		addCoupling(cust_genr,"cust_gen",paper_work,"Cust_In");
-		addCoupling(paper_work, "CheckedIn_0", this, "out0");
+		addCoupling(paper_work, "CheckedIn_0", economy_car, "economyIn");
+		addCoupling(economy_car, "economyOut", this, "out0");
 		addCoupling(paper_work, "CheckedIn_1", this, "out1");
 		addCoupling(paper_work, "CheckedIn_2", this, "out2");
 	}
@@ -43,10 +46,12 @@ public class CarRentalSystem extends ViewableDigraph{
      */
     public void layoutForSimView()
     {
-        preferredSize = new Dimension(625, 341);
+        preferredSize = new Dimension(734, 402);
         if((ViewableComponent)withName("PaperWork")!=null)
-             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(274, 54));
+             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(211, 133));
         if((ViewableComponent)withName("customerGenerator")!=null)
-             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(50, 50));
+             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(19, 127));
+        if((ViewableComponent)withName("Economy")!=null)
+             ((ViewableComponent)withName("Economy")).setPreferredLocation(new Point(358, 28));
     }
 }
