@@ -13,7 +13,7 @@ import GenCol.*;
 public class Midsize extends ViewableAtomic{
 	protected DEVSQueue midsize_queue;
 	entity customer, current_customer = null;
-	int processingTime = 5;
+	int processingTime = 3;
 	int price = 50;
 	
 	public Midsize() {this("Midsize");}

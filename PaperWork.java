@@ -11,7 +11,7 @@ import GenCol.*;
 public class PaperWork extends ViewableAtomic{
 	protected DEVSQueue customer_queue;
 	entity customer, current_customer = null;
-	int processingTime = 7;
+	int processingTime = 1;
 	int price;
 	
 	public PaperWork() {this("PaperWork");}
@@ -69,7 +69,7 @@ public class PaperWork extends ViewableAtomic{
 		//System.out.println(current_customer);
 		if(((customer)current_customer).getType_of_car() == 0) {
 		    con = makeContent("CheckedIn_0", 
-		    		new paymentCalc(current_customer.getName(), (int)price, (int)((customer)current_customer).getNo_of_days()));
+		    		new paymentCalc(current_customer.getName(), (int)((customer)current_customer).getType_of_car(), (int)((customer)current_customer).getNo_of_days()));
 		    m.add(con);
 		}
 		else if(((customer)current_customer).getType_of_car() == 1) {
@@ -79,7 +79,7 @@ public class PaperWork extends ViewableAtomic{
 		}
 		else if(((customer)current_customer).getType_of_car() == 2) {
 			con = makeContent("CheckedIn_2", 
-					new paymentCalc(current_customer.getName(), (int)price, (int)((customer)current_customer).getNo_of_days()));
+					new paymentCalc(current_customer.getName(), (int)((customer)current_customer).getType_of_car(), (int)((customer)current_customer).getNo_of_days()));
 			m.add(con);
 		}
 		

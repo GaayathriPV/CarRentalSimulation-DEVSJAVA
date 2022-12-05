@@ -54,18 +54,18 @@ public class CarRentalSystem extends ViewableDigraph{
      */
     public void layoutForSimView()
     {
-        preferredSize = new Dimension(990, 439);
+        preferredSize = new Dimension(1050, 439);
         if((ViewableComponent)withName("Midsize")!=null)
-             ((ViewableComponent)withName("Midsize")).setPreferredLocation(new Point(415, 188));
+             ((ViewableComponent)withName("Midsize")).setPreferredLocation(new Point(425, 173));
         if((ViewableComponent)withName("checkOut")!=null)
-             ((ViewableComponent)withName("checkOut")).setPreferredLocation(new Point(667, 192));
+             ((ViewableComponent)withName("checkOut")).setPreferredLocation(new Point(697, 182));
         if((ViewableComponent)withName("MiniVan")!=null)
-             ((ViewableComponent)withName("MiniVan")).setPreferredLocation(new Point(427, 322));
+             ((ViewableComponent)withName("MiniVan")).setPreferredLocation(new Point(450, 317));
         if((ViewableComponent)withName("customerGenerator")!=null)
-             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(1, 132));
+             ((ViewableComponent)withName("customerGenerator")).setPreferredLocation(new Point(-2, 166));
         if((ViewableComponent)withName("Economy")!=null)
-             ((ViewableComponent)withName("Economy")).setPreferredLocation(new Point(408, 30));
+             ((ViewableComponent)withName("Economy")).setPreferredLocation(new Point(418, 28));
         if((ViewableComponent)withName("PaperWork")!=null)
-             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(188, 135));
+             ((ViewableComponent)withName("PaperWork")).setPreferredLocation(new Point(186, 174));
     }
 }

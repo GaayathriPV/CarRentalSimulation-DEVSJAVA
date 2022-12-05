@@ -13,7 +13,7 @@ import GenCol.*;
 public class Economy extends ViewableAtomic{
 	protected DEVSQueue economy_queue;
 	entity customer, current_customer = null;
-	int processingTime = 5;
+	int processingTime = 3;
 	int price = 40;
 	
 	public Economy() {this("Economy");}

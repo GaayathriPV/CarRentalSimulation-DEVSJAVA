@@ -28,7 +28,7 @@ public class customerGenerator extends ViewableAtomic{
   protected int count;
   protected Random r;
 
-  public customerGenerator() {this("customerGenerator", 5);}
+  public customerGenerator() {this("customerGenerator", 2);}
 
 public customerGenerator(String name,int period){
    super(name);
@@ -51,7 +51,7 @@ public void  deltint( )
 if(phaseIs("generates")){
    count = count +1;
    //holdIn("active",int_gen_time);
-   holdIn("generates",r.nextInt(10));
+   holdIn("generates",r.nextInt(2));
 }
 else passivate();
 }

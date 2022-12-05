@@ -8,7 +8,7 @@ import genDevs.simulation.*;
 import GenCol.*;
 
 public class checkOut extends ViewableAtomic{
-	int processingTime = 4;
+	int processingTime = 2;
 	protected DEVSQueue checkout_queue;
 	entity customer, current_customer = null;
 	

@@ -13,7 +13,7 @@ import GenCol.*;
 public class MiniVan extends ViewableAtomic{
 	protected DEVSQueue minivan_queue;
 	entity customer, current_customer = null;
-	int processingTime = 5;
+	int processingTime = 3;
 	int price = 70;
 	
 	public MiniVan() {this("MiniVan");}
